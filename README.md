@@ -10,20 +10,20 @@ Python codes for managing calculations of vibrational modes of a subsystem with 
 4. Put a POTCAR file and a preconverged WAVECAR in the working directory.
 5. Call the following functions in sequence
    
-   5.1 sv = subsystem_vibration() # Instantiate a subsystem vibration object
+   5.1 **sv = subsystem_vibration()** # Instantiate a subsystem vibration object
    
-   5.2 sv.get_contcar_cartesian() # Get cartesian coordinate for checking purposes
+   5.2 **sv.get_contcar_cartesian()** # Get cartesian coordinates for checking purposes
    
-   5.3 sv.get_poscar() # Get the coordinates with atomic displacement
+   5.3 **sv.get_poscars()** # Get the coordinates for all atomic displacements
    
-   5.4 sv.create_directories() # Create folders for all DFT calculations
+   5.4 **sv.create_directories()** # Create folders for all DFT calculations
    
-   5.5 sv.get_input_files() # Get the input files for all DFT calculations
+   5.5 **sv.get_input_files()** # Get the input files for all DFT calculations
    
-   5.6 sv.submit_jobs() # Submit Slurm jobs, which can be replaced by a job array
+   5.6 **sv.submit_jobs()** # Submit Slurm jobs, which can be replaced by a job array
    
-   5.7 sv.check_convergence() # Check convergence of all DFT calculations
+   5.7 **sv.check_convergence()** # Check convergence of all DFT calculations
    
-   5.8 sv.get_forces() # Gather the calculated forces for all distorted systems
+   5.8 **sv.get_forces()** # Gather the calculated forces for all distorted systems
    
-   5.9 sv.get_vib() # Calculate vibrational modes
+   5.9 **sv.get_vib()** # Calculate vibrational modes
