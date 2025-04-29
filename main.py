@@ -42,7 +42,7 @@ class partial_vibration:
         """
         self.dir_name = "{:04d}".format(idisplacement)
   
-    def get_poscar(self):
+    def get_poscars(self):
         """
         Obtain the POSCAR files for each distortion of the molecule.
         """
@@ -192,13 +192,13 @@ class partial_vibration:
         subprocess.run(["phonopy", "-t", "-p", "mesh.conf"])
 
 if __name__ == "__main__":
-    pv = partial_vibration()
-    # pv.get_contcar_cartesian()
-    # pv.get_poscar()
-    # pv.create_directories()
-    # pv.get_input_files()
-    # pv.submit_jobs()
-    # pv.check_convergence()
-    # pv.get_forces()
-    # pv.get_vib()
+    sv = partial_vibration()
+    # sv.get_contcar_cartesian()
+    # sv.get_poscars()
+    # sv.create_directories()
+    # sv.get_input_files()
+    # sv.submit_jobs()
+    # sv.check_convergence()
+    # sv.get_forces()
+    # sv.get_vib()
 
