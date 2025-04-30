@@ -200,7 +200,7 @@ if __name__ == "__main__":
     # sv.create_directories()
     # sv.get_input_files()
     # sv.submit_jobs()
-    sv.check_convergence()
+    # sv.check_convergence()
     # sv.get_forces()
     # sv.get_vib()
 
