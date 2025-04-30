@@ -91,7 +91,7 @@ class partial_vibration:
               os.system("pwd")
               with open("INCAR", "w") as f:
                 f.write(incar)
-              subprocess.run(["ln", "-sf", rootdir + "/POSCAR-{:03d}".format(idisplacement), "POSCAR"])
+              subprocess.run(["ln", "-sf", rootdir + "/POSCAR-" + self.dir_name, "POSCAR"])
               subprocess.run(["ln", "-sf", rootdir + "/POTCAR", "."])
               with open("KPOINTS", "w") as f:
                 f.write(kpoints)
@@ -116,7 +116,9 @@ class partial_vibration:
               os.chdir(rootdir)
   
     def check_convergence(self):
-        for iatom in range(self.natom):
+        # for iatom in range(self.natom):
+        # for iatom in range(10):
+        for iatom in range(10, 50):
             counter = 0
             for iaxis in range(3):
                 for idirection in [-1, 1]:
@@ -133,12 +135,12 @@ class partial_vibration:
                         
                         # Check if the standard output of the previous command is empty
                         if output.stdout:
-                            # print("{:s}: Converged".format(dname))
+                            # print("{:s}: Converged".format(self.dir_name))
                             pass
                         else:
-                            print("{:s}: Not converged".format(dname))
+                            print("{:s}: Not converged".format(self.dir_name))
                     except:
-                        print("{:s}: Error".format(dname))
+                        print("{:s}: Error".format(self.dir_name))
                     os.chdir(rootdir)
 
     def get_forces(self):
@@ -198,7 +200,7 @@ if __name__ == "__main__":
     # sv.create_directories()
     # sv.get_input_files()
     # sv.submit_jobs()
-    # sv.check_convergence()
+    sv.check_convergence()
     # sv.get_forces()
     # sv.get_vib()
 
